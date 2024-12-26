@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter3/models/game.dart';
-import 'package:flutter3/pages/game_page.dart';
+import 'package:flutter3/models/product.dart';
+import 'package:flutter3/pages/product_page.dart';
 
-class GameItem extends StatelessWidget {
-  const GameItem({super.key, required this.game});
-  final Game game;
+class ProductItem extends StatelessWidget {
+  const ProductItem({super.key, required this.product});
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (ctx) => GamePage(game: game,))),
+          context, MaterialPageRoute(builder: (ctx) => ProductPage(product: product,))),
       child: Column(
         children: [
           AspectRatio(
@@ -18,7 +18,7 @@ class GameItem extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(game.imageUrl), fit: BoxFit.cover),
+                        image: NetworkImage(product.imageUrl), fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15)),
               )),
           Container(
@@ -27,7 +27,7 @@ class GameItem extends StatelessWidget {
               child: FittedBox(
                 fit: BoxFit.fitWidth,
                 child: Text(
-                  game.name,
+                  product.name,
                   style: const TextStyle(
                       color: Colors.black87,
                       fontWeight: FontWeight.w900,
@@ -39,7 +39,7 @@ class GameItem extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.fromLTRB(8, 1, 8, 5),
-            child: Text(game.price,
+            child: Text(product.price,
                 style: const TextStyle(
                     color: Colors.black54,
                     fontWeight: FontWeight.w900,
@@ -48,7 +48,7 @@ class GameItem extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () => {Navigator.push(
-                  context, MaterialPageRoute(builder: (ctx) => GamePage(game: game,)))},
+                  context, MaterialPageRoute(builder: (ctx) => ProductPage(product: product,)))},
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   shape: RoundedRectangleBorder(

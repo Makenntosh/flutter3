@@ -1,4 +1,4 @@
-class Game {
+class Product {
   final String id;
   final String name;
   final String description;
@@ -6,5 +6,5 @@ class Game {
   final String price;
   // final List<String> tags;
 
-  Game(this.id, this.name, this.description, this.imageUrl, this.price);
+  Product(this.id, this.name, this.description, this.imageUrl, this.price);
 }

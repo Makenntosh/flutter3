@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter3/models/game.dart';
+import 'package:flutter3/models/product.dart';
 
-class GamePage extends StatelessWidget {
-  const GamePage({super.key, required this.game});
-  final Game game;
+class ProductPage extends StatelessWidget {
+  const ProductPage({super.key, required this.product});
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(game.name),
+          title: Text(product.name),
         ),
         body: Stack(children: [
           SingleChildScrollView(
@@ -20,7 +20,7 @@ class GamePage extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: NetworkImage(game.imageUrl),
+                              image: NetworkImage(product.imageUrl),
                               fit: BoxFit.cover),
                           borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(15),
@@ -30,7 +30,7 @@ class GamePage extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                     child: Text(
-                      game.name,
+                      product.name,
                       style: const TextStyle(
                           fontSize: 32, fontWeight: FontWeight.w900),
                       softWrap: true,
@@ -39,14 +39,14 @@ class GamePage extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                     child: Text(
-                      game.id,
+                      product.id,
                       style: const TextStyle(fontSize: 12, color: Colors.grey),
                       softWrap: true,
                     )),
                 Container(
                     padding: const EdgeInsets.fromLTRB(8, 5, 8, 0),
                     child: Text(
-                      game.description,
+                      product.description,
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 16),
                       softWrap: true,
@@ -70,7 +70,7 @@ class GamePage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 label: Text(
-                  game.price,
+                  product.price,
                   style: const TextStyle(color: Colors.white),
                 ),
                 shape: const RoundedRectangleBorder(),
